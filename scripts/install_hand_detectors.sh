@@ -8,20 +8,14 @@ cd detectors
 pip install gdown
 
 # Install 100-DOH hand-object detectors
-git clone git@github.com:ddshan/hand_object_detector.git
-if [ ! -d hand_object_detector ]; then
-    git clone https://github.com/ddshan/hand_object_detector
-fi
+git clone https://github.com/ojh6404/hand_object_detector.git
 # compile
 cd hand_object_detector/lib
-python setup.py build develop
+python setup.py build develop --user
 cd ../../
 
 # Install 100-DOH hand-only detectors
-git clone git@github.com:ddshan/hand_detector.d2.git
-if [ ! -d hand_detector.d2 ]; then
-    git clone https://github.com/ddshan/hand_detector.d2.git
-fi
+git clone https://github.com/ddshan/hand_detector.d2.git
 mv hand_detector.d2 hand_only_detector
 
 # downloading weights
