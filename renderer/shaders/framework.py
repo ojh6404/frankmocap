@@ -81,12 +81,17 @@ def findFileOrThrow(strBasename):
 
     LOCAL_FILE_DIR = "data" + os.sep
     GLOBAL_FILE_DIR = os.path.dirname(os.path.abspath(__file__)) + os.sep + "data" + os.sep
+    FRANKMOCAP_ROOT_DIR = os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep
 
     strFilename = LOCAL_FILE_DIR + strBasename
     if os.path.isfile(strFilename):
         return strFilename
 
     strFilename = GLOBAL_FILE_DIR + strBasename
+    if os.path.isfile(strFilename):
+        return strFilename
+
+    strFilename = FRANKMOCAP_ROOT_DIR + strBasename
     if os.path.isfile(strFilename):
         return strFilename
 
