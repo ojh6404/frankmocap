@@ -111,9 +111,9 @@ class Visualizer(object):
         # render predicted meshes
         if pred_mesh_list is not None:
             rend_img = self.__render_pred_verts(input_img, pred_mesh_list)
-            if rend_img is not None:
-                res_img = np.concatenate((res_img, rend_img), axis=1)
-            # res_img = rend_img
+            # if rend_img is not None:
+            #     res_img = np.concatenate((res_img, rend_img), axis=1)
+            res_img = rend_img
         
         return res_img
         
